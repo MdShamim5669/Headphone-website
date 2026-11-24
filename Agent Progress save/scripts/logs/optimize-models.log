@@ -1,1 +1,87 @@
 optimizing Hybrid Active Noise Cancelling Bluetooth Headphones Wireless Headphones.glb -> public/models/hybrid-anc.glb
+warn: Decoded EXT_meshopt_compression. Further compression will be lossy.
+❯ dedup
+✔ dedup                2ms
+❯ instance
+✔ instance             1ms
+❯ palette
+✔ palette              0ms
+❯ flatten
+✔ flatten              1ms
+❯ join
+✔ join                 274ms
+❯ weld
+✔ weld                 567ms
+❯ simplify
+✔ simplify             2,423ms
+❯ resample
+✔ resample             1ms
+❯ prune
+✔ prune                341ms
+❯ sparse
+✔ sparse               19ms
+❯ textureCompress
+✔ textureCompress      761ms
+❯ meshopt
+✔ meshopt              160ms
+
+info: Hybrid Active Noise Cancelling Bluetooth Headphones Wireless Headphones.glb (18.93 MB) → hybrid-anc.glb (1.19 MB)
+-rw-r--r-- 1 vercel-sandbox vercel-sandbox 1.2M Nov 24 18:12 public/models/hybrid-anc.glb
+optimizing Skullcandy Crusher 540 Active Wireless Sensory Bass Headphones - Forest.glb -> public/models/crusher-540.glb
+warn: Decoded EXT_meshopt_compression. Further compression will be lossy.
+❯ dedup
+✔ dedup                2ms
+❯ instance
+✔ instance             1ms
+❯ palette
+✔ palette              1ms
+❯ flatten
+✔ flatten              1ms
+❯ join
+✔ join                 387ms
+❯ weld
+✔ weld                 566ms
+❯ simplify
+✔ simplify             2,549ms
+❯ resample
+✔ resample             0ms
+❯ prune
+✔ prune                351ms
+❯ sparse
+✔ sparse               34ms
+❯ textureCompress
+✔ textureCompress      844ms
+❯ meshopt
+✔ meshopt              164ms
+
+info: Skullcandy Crusher 540 Active Wireless Sensory Bass Headphones - Forest.glb (18.31 MB) → crusher-540.glb (1.09 MB)
+-rw-r--r-- 1 vercel-sandbox vercel-sandbox 1.1M Nov 24 18:12 public/models/crusher-540.glb
+optimizing Bose QuietComfort Headphones (2nd Gen).glb -> public/models/bose-qc2.glb
+warn: Decoded EXT_meshopt_compression. Further compression will be lossy.
+❯ dedup
+✔ dedup                2ms
+❯ instance
+✔ instance             1ms
+❯ palette
+✔ palette              1ms
+❯ flatten
+✔ flatten              1ms
+❯ join
+✔ join                 327ms
+❯ weld
+✔ weld                 711ms
+❯ simplify
+✔ simplify             3,177ms
+❯ resample
+✔ resample             0ms
+❯ prune
+✔ prune                517ms
+❯ sparse
+✔ sparse               35ms
+❯ textureCompress
+✔ textureCompress      853ms
+❯ meshopt
+✔ meshopt              159ms
+
+info: Bose QuietComfort Headphones (2nd Gen).glb (19.75 MB) → bose-qc2.glb (1.24 MB)
+-rw-r--r-- 1 vercel-sandbox vercel-sandbox 1.2M Nov 24 18:12 public/models/bose-qc2.glb
