@@ -1,0 +1,63 @@
+[
+  {
+    "id": "bose-qc2", "slug": "bose-qc2", "name": "Bose QC Gen 2",
+    "tagline": "Pure Silence", "subTagline": "Deeply Immersive",
+    "description": "World-class noise cancelling, plush memory-foam cushions and a balanced, detailed sound tuned for long listening sessions.",
+    "price": 299, "compareAtPrice": 349, "currency": "USD", "category": "over-ear",
+    "tags": ["wireless", "anc"], "rating": 4.8, "reviewCount": 1240, "stock": 35, "popularity": 98,
+    "model": { "glb": "/models/bose-qc2.glb", "scale": 1, "rotation": [0, 0.35, 0], "position": [0, 0, 0] },
+    "theme": { "bgFrom": "#0d3b2e", "bgTo": "#03140f", "accent": "#7dffb3", "text": "#ffffff", "particles": "orbs" },
+    "variants": [
+      { "name": "Original", "hex": "#ffffff", "sku": "BQC2-ORG" },
+      { "name": "Midnight", "hex": "#5a6178", "sku": "BQC2-MID" },
+      { "name": "Sandstone", "hex": "#e8c9a0", "sku": "BQC2-SND" }
+    ],
+    "features": ["ANC", "24h Battery", "Bluetooth 5.3", "Multipoint"],
+    "specs": { "driver": "40mm dynamic", "frequency": "20Hz–20kHz", "battery": "24h", "weight": "240g", "bluetooth": "5.3", "charging": "USB-C, 15 min = 3h" },
+    "hotspots": [
+      { "label": "Memory-foam cushions", "position": [0.42, -0.2, 0.05] },
+      { "label": "Padded headband", "position": [0, 0.48, 0] },
+      { "label": "Touch controls", "position": [-0.42, -0.1, 0.05] }
+    ]
+  },
+  {
+    "id": "hybrid-anc", "slug": "hybrid-anc", "name": "Hybrid ANC Pro",
+    "tagline": "Pure Sound", "subTagline": "Zero Distractions",
+    "description": "Hybrid active noise cancelling with six mics, 60 hours of playtime and hi-res wireless audio at an everyday price.",
+    "price": 129, "compareAtPrice": 169, "currency": "USD", "category": "over-ear",
+    "tags": ["wireless", "anc"], "rating": 4.6, "reviewCount": 860, "stock": 3, "popularity": 87,
+    "model": { "glb": "/models/hybrid-anc.glb", "scale": 1, "rotation": [0, 1.9, 0], "position": [0, 0, 0] },
+    "theme": { "bgFrom": "#10285c", "bgTo": "#040a1f", "accent": "#6fb7ff", "text": "#ffffff", "particles": "waves" },
+    "variants": [
+      { "name": "Original", "hex": "#ffffff", "sku": "HANC-ORG" },
+      { "name": "Ocean", "hex": "#8fb8ff", "sku": "HANC-OCN" },
+      { "name": "Rose", "hex": "#ffb3c7", "sku": "HANC-RSE" }
+    ],
+    "features": ["Hybrid ANC", "60h Battery", "Hi-Res", "Low latency"],
+    "specs": { "driver": "40mm dynamic", "frequency": "4Hz–40kHz", "battery": "60h", "weight": "250g", "bluetooth": "5.3", "charging": "USB-C, 10 min = 5h" },
+    "hotspots": [
+      { "label": "6-mic hybrid ANC", "position": [0.4, -0.15, 0.1] },
+      { "label": "Adjustable band", "position": [0, 0.48, 0] }
+    ]
+  },
+  {
+    "id": "crusher-540", "slug": "crusher-540", "name": "Crusher 540 Forest",
+    "tagline": "Feel the Bass", "subTagline": "Sensory Immersion",
+    "description": "Adjustable sensory bass you can actually feel, a forest-green finish and 40 hours of wireless freedom.",
+    "price": 179, "compareAtPrice": 229, "currency": "USD", "category": "over-ear",
+    "tags": ["wireless", "gaming"], "rating": 4.7, "reviewCount": 512, "stock": 18, "popularity": 91,
+    "model": { "glb": "/models/crusher-540.glb", "scale": 1, "rotation": [0, 1.9, 0], "position": [0, 0, 0] },
+    "theme": { "bgFrom": "#3b1d0f", "bgTo": "#120603", "accent": "#ffb36b", "text": "#ffffff", "particles": "notes" },
+    "variants": [
+      { "name": "Forest", "hex": "#ffffff", "sku": "CR540-FOR" },
+      { "name": "Ember", "hex": "#ffb08a", "sku": "CR540-EMB" },
+      { "name": "Frost", "hex": "#cfe6ff", "sku": "CR540-FRS" }
+    ],
+    "features": ["Sensory Bass", "40h Battery", "Bluetooth 5.2", "Gaming mode"],
+    "specs": { "driver": "50mm dynamic", "frequency": "20Hz–20kHz", "battery": "40h", "weight": "310g", "bluetooth": "5.2", "charging": "USB-C, 10 min = 4h" },
+    "hotspots": [
+      { "label": "Sensory bass slider", "position": [0.4, -0.2, 0.1] },
+      { "label": "Steel headband", "position": [0, 0.48, 0] }
+    ]
+  }
+]
