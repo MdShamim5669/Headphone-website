@@ -119,12 +119,13 @@ function Rig({ children, mode, resetRef, keyRot, zoom, distance }: {
   const g = useRef<THREE.Group>(null);
   const controls = useRef<OC>(null);
   const { camera } = useThree();
-  const st = useRef({ dragging: false, lastEnd: -10, reset: 0, resetting: false, spin: 0 });
+  const st = useRef({ dragging: false, lastEnd: -10, ended: false, reset: 0, resetting: false, spin: 0 });
   const home = useMemo(() => new THREE.Vector3(0, 0.2, distance), [distance]);
   const reduced = useMemo(() => typeof window !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches, []);
 
   useFrame((s, dt) => {
     const r = st.current; const now = s.clock.elapsedTime;
+    if (r.ended) { r.ended = false; r.lastEnd = now; } // release time on the r3f clock
     if (resetRef.current !== r.reset) { r.reset = resetRef.current; r.resetting = true; r.spin = 0; }
     const idle = !r.dragging && now - r.lastEnd > 3;
     if (mode === "hero" && idle && !r.resetting && camera.position.distanceTo(home) > 0.05) r.resetting = true; // spring back
@@ -148,10 +149,8 @@ function Rig({ children, mode, resetRef, keyRot, zoom, distance }: {
       <OrbitControls ref={controls as never} makeDefault enablePan={false} enableDamping dampingFactor={0.08} enableZoom={zoom}
         minDistance={2.6} maxDistance={7} minPolarAngle={Math.PI * 0.2} maxPolarAngle={Math.PI * 0.72}
         onStart={() => { st.current.dragging = true; st.current.resetting = false; }}
-        onEnd={() => { st.current.dragging = false; st.current.lastEnd = performance.now() / 1000 - 0 && 0; st.current.lastEnd = -1; markEnd(st); }} />
+        onEnd={() => { st.current.dragging = false; st.current.ended = true; }} />
       <group ref={g}>{children}</group>
     </>
   );
 }
-// record release time on the r3f clock scale (seconds since canvas start)
-function markEnd(st: React.MutableRefObject<{ lastEnd: number }>) { st.current.lastEnd = Number.NaN; }
