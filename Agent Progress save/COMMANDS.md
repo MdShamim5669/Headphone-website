@@ -11,3 +11,5 @@ Result: SUCCESS
 Result: each model = 1 mesh ~1.93M triangles, 1 material (tripo_*), 4096² color/ORM/normal textures, already meshopt.
 ### 6. bash "Agent Progress save/scripts/optimize-models.sh"  (simplify 6%, 2048 webp, meshopt → public/models/*.glb)
 Result: running — see scripts/logs/optimize-models.log
+### 7. Session #3: git clone + configured git credentials (token hidden); started autopush.sh; npm install
+Result: SUCCESS — repo had step 0/1 only; public/models/*.glb already optimized (1.09–1.24 MB)

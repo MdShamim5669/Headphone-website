@@ -2,11 +2,11 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 1/6 → micro-task 1.1 — scaffold Next.js app at REPO ROOT
-- Last action: Step 0 done (progress folder, scripts, plan)
-- NEXT ACTION: Create Next.js 15 + TS + Tailwind v4 app in repo root (outside "Agent Progress save/"), install 3D deps.
-- Project runs?: NOT YET
-- Last updated: 2026-11-25 00:20 (Asia/Dhaka) by Session #2
+- Current: Step 2/6 → data + design system + layout (Session #3)
+- Last action: Session #3 resumed. Step 1 is DONE (package.json, deps, next.config.ts, public/models/*.glb ~1.1-1.2MB each).
+- NEXT ACTION: write data/products.json, store/, lib/, app/layout.tsx + globals.css, Navbar/Footer/CartDrawer, then 3D Scene + Hero.
+- Project runs?: NOT YET (no app/ folder yet)
+- Last updated: 2026-11-25 00:35 (Asia/Dhaka) by Session #3
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -27,10 +27,11 @@
 ## Plan
 - [x] Step 0: progress folder, scripts, plan
 - [ ] Step 1: Setup
-  - [ ] 1.1 Next.js scaffold at repo root   ← IN PROGRESS
-  - [ ] 1.2 Install deps (three, r3f, drei, zustand, framer-motion, gsap, lenis, lucide-react)
-  - [ ] 1.3 Optimize GLBs → public/models (gltf-transform, webp textures, meshopt) + posters
-- [ ] Step 2: Data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
+  - [x] 1.1 Next.js scaffold at repo root (package.json, tsconfig, next.config.ts, postcss)
+  - [x] 1.2 Install deps (three, r3f, drei, zustand, framer-motion, lucide-react)
+  - [x] 1.3 Optimize GLBs → public/models (gltf-transform, webp textures, meshopt) + posters
+- [ ] Step 2: Data   ← IN PROGRESS (Session #3)
+  - [ ] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
 - [ ] Step 3: 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
 - [ ] Step 4: Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
 - [ ] Step 5: Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
@@ -57,7 +58,10 @@ npm run build
 
 ## Session History
 - Session #1: started, nothing pushed (stopped by usage policy).
-- Session #2: NEW TASK setup, step 0 done.
+- Session #2: NEW TASK setup, step 0 + step 1 done. It also WROTE (but never pushed) product data,
+  stores, 3D scene, viewer, navbar/footer/cart drawer and hero, then was stopped by a usage policy.
+  Those files were LOST. Lesson: checkpoint right after each file batch.
+- Session #3 (2026-11-25): started, resuming from step 2 (rewriting the lost files).
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
