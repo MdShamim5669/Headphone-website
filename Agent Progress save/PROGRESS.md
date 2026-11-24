@@ -2,11 +2,11 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 2/6 → data + design system + layout (Session #3)
-- Last action: Session #3 resumed. Step 1 is DONE (package.json, deps, next.config.ts, public/models/*.glb ~1.1-1.2MB each).
-- NEXT ACTION: write data/products.json, store/, lib/, app/layout.tsx + globals.css, Navbar/Footer/CartDrawer, then 3D Scene + Hero.
-- Project runs?: NOT YET (no app/ folder yet)
-- Last updated: 2026-11-25 00:35 (Asia/Dhaka) by Session #3
+- Current: Step 3/6 → 3D viewer fix + Hero + ProductSwitcher + app/page.tsx (Session #4)
+- Last action: Session #4 resumed. Step 2 files exist (pushed in 8254735). components/three/{Viewer,HeadphoneModel,Particles}.tsx exist (auto-pushed 93024d8); Rig idle logic in Viewer.tsx was broken (lastEnd=NaN) → fixing.
+- NEXT ACTION: fix Rig idle in components/three/Viewer.tsx, write components/hero/{Hero,ProductSwitcher}.tsx + app/page.tsx, run `npm run build`.
+- Project runs?: NOT YET (no app/page.tsx)
+- Last updated: 2026-11-25 00:55 (Asia/Dhaka) by Session #4
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -30,9 +30,9 @@
   - [x] 1.1 Next.js scaffold at repo root (package.json, tsconfig, next.config.ts, postcss)
   - [x] 1.2 Install deps (three, r3f, drei, zustand, framer-motion, lucide-react)
   - [x] 1.3 Optimize GLBs → public/models (gltf-transform, webp textures, meshopt) + posters
-- [ ] Step 2: Data   ← IN PROGRESS (Session #3)
-  - [ ] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
-- [ ] Step 3: 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
+- [x] Step 2: Data
+  - [x] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
+- [ ] Step 3: ← IN PROGRESS (Session #4) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
 - [ ] Step 4: Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
 - [ ] Step 5: Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
 - [ ] Step 6: SEO, a11y, mobile polish, build, screenshots, README
@@ -61,7 +61,8 @@ npm run build
 - Session #2: NEW TASK setup, step 0 + step 1 done. It also WROTE (but never pushed) product data,
   stores, 3D scene, viewer, navbar/footer/cart drawer and hero, then was stopped by a usage policy.
   Those files were LOST. Lesson: checkpoint right after each file batch.
-- Session #3 (2026-11-25): started, resuming from step 2 (rewriting the lost files).
+- Session #3 (2026-11-25): started, resuming from step 2 (rewriting the lost files). Pushed step 2 + Viewer/HeadphoneModel/Particles; stopped by usage policy while writing hero/ProductSwitcher (lost).
+- Session #4 (2026-11-25): started, resuming from step 3 (hero + switcher). User re-confirmed: progress files ONLY in `Agent Progress save/`, website outside, use assets/*.glb.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):

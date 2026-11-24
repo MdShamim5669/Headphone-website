@@ -13,3 +13,5 @@ Result: each model = 1 mesh ~1.93M triangles, 1 material (tripo_*), 4096² color
 Result: running — see scripts/logs/optimize-models.log
 ### 7. Session #3: git clone + configured git credentials (token hidden); started autopush.sh; npm install
 Result: SUCCESS — repo had step 0/1 only; public/models/*.glb already optimized (1.09–1.24 MB)
+### 8. Session #4: git clone + configured git credentials (token hidden); started autopush.sh; npm install
+Result: SUCCESS
