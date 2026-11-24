@@ -1,0 +1,35 @@
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /vercel/sandbox/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /vercel/sandbox/data/project/package-lock.json
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 17.1s
+   Linting and checking validity of types ...
+Failed to compile.
+
+./lib/products.ts:3:25
+Type error: Conversion of type '{ id: string; slug: string; name: string; tagline: string; subTagline: string; description: string; price: number; compareAtPrice: number; currency: string; category: string; tags: string[]; rating: number; ... 8 more ...; hotspots: { ...; }[]; }[]' to type 'Product[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ id: string; slug: string; name: string; tagline: string; subTagline: string; description: string; price: number; compareAtPrice: number; currency: string; category: string; tags: string[]; rating: number; ... 8 more ...; hotspots: { ...; }[]; }' is not comparable to type 'Product'.
+    The types of 'model.rotation' are incompatible between these types.
+      Type 'number[]' is not comparable to type 'Vec3'.
+        Target requires 3 element(s) but source may have fewer.
+
+[0m [90m 1 |[39m [36mimport[39m data [36mfrom[39m [32m"@/data/products.json"[39m[33m;[39m
+ [90m 2 |[39m [36mimport[39m type { [33mProduct[39m } [36mfrom[39m [32m"./types"[39m[33m;[39m
+[31m[1m>[22m[39m[90m 3 |[39m [36mexport[39m [36mconst[39m products [33m=[39m data [36mas[39m [33mProduct[39m[][33m;[39m
+ [90m   |[39m                         [31m[1m^[22m[39m
+ [90m 4 |[39m [36mexport[39m [36mconst[39m getProduct [33m=[39m (slug[33m:[39m string) [33m=>[39m products[33m.[39mfind((p) [33m=>[39m p[33m.[39mslug [33m===[39m slug)[33m;[39m
+ [90m 5 |[39m [36mexport[39m [36mconst[39m [33mSITE[39m [33m=[39m { name[33m:[39m [32m"SONIQ"[39m[33m,[39m url[33m:[39m [32m"https://soniq.example.com"[39m }[33m;[39m
+ [90m 6 |[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+EXIT 1
