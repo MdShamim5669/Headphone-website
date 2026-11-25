@@ -2,8 +2,8 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 4/6 → verify home sections build (Session #6)
-- Last action: Session #6 resumed. All 9 home sections exist in components/sections/ and are wired in app/page.tsx (commit b956cba), build not yet verified.
+- Current: Step 5/6 → store pages (Session #6)
+- Last action: `npm run build` PASSES with all 9 home sections (scripts/logs/build.log).
 - NEXT ACTION: `npm run build`, fix errors, then Step 5 pages (shop, product/[slug], cart, checkout, success, info, 404).
 - Project runs?: YES (build passes, home = hero only)
 - Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #6
@@ -33,8 +33,8 @@
 - [x] Step 2: Data
   - [x] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
 - [x] Step 3: (done Session #5, build passes) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
-- [ ] Step 4: ← IN PROGRESS (Session #5) Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
-- [ ] Step 5: Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
+- [x] Step 4: (done Session #6, build passes) Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
+- [ ] Step 5: ← IN PROGRESS (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
 - [ ] Step 6: SEO, a11y, mobile polish, build, screenshots, README
 
 ## Done so far (details)

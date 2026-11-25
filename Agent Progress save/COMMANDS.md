@@ -19,3 +19,5 @@ Result: SUCCESS
 Result: SUCCESS — build passes
 ### 10. Session #6: clone, creds (token hidden), autopush, npm install
 Result: SUCCESS
+### 11. npm run build (home sections)
+Result: SUCCESS — / 14.8kB, log scripts/logs/build.log

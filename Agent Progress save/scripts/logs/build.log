@@ -9,10 +9,15 @@
  Detected additional lockfiles: 
    * /vercel/sandbox/data/project/package-lock.json
 
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
    ▲ Next.js 15.5.29
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 6.1s
+ ✓ Compiled successfully in 21.8s
    Linting and checking validity of types ...
    Collecting page data ...
    Generating static pages (0/5) ...
@@ -36,4 +41,3 @@ Route (app)                                 Size  First Load JS
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
-EXIT 0
