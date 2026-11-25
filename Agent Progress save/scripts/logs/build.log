@@ -17,21 +17,26 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.29
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 21.8s
+ ✓ Compiled successfully in 22.5s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/5) ...
-   Generating static pages (1/5) 
-   Generating static pages (2/5) 
-   Generating static pages (3/5) 
- ✓ Generating static pages (5/5)
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS
 ┌ ○ /                                    14.8 kB         173 kB
 ├ ○ /_not-found                            995 B         104 kB
-└ ƒ /api/newsletter                        123 B         103 kB
+├ ƒ /api/newsletter                        123 B         103 kB
+├ ● /product/[slug]                      7.17 kB         116 kB
+├   ├ /product/bose-qc2
+├   ├ /product/hybrid-anc
+├   └ /product/crusher-540
+└ ○ /shop                                5.25 kB         115 kB
 + First Load JS shared by all             103 kB
   ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
   ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
@@ -39,5 +44,7 @@ Route (app)                                 Size  First Load JS
 
 
 ○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
 ƒ  (Dynamic)  server-rendered on demand
 
+EXIT 0

@@ -3,8 +3,8 @@
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
 - Current: Step 5/6 → store pages (Session #7)
-- Last action: Session #7 resumed. Session #6 pushed shop + product/[slug] (1732235, not built yet); cart/checkout/success were being written but were LOST (not pushed).
-- NEXT ACTION: `npm run build` to check shop + product pages, then write app/cart, app/checkout, app/order/success, info pages, 404.
+- Last action: `npm run build` PASSES with /shop + /product/[slug] (3 SSG pages).
+- NEXT ACTION: write app/cart/page.tsx, app/checkout/page.tsx (+components/checkout/CheckoutClient.tsx), app/order/success/page.tsx, then info pages + 404.
 - Project runs?: YES (build passes, home = hero only)
 - Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #7
 
@@ -34,7 +34,11 @@
   - [x] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
 - [x] Step 3: (done Session #5, build passes) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
 - [x] Step 4: (done Session #6, build passes) Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
-- [ ] Step 5: ← IN PROGRESS (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
+- [ ] Step 5: ← IN PROGRESS
+  - [x] 5.1 shop + product/[slug] (build passes, Session #7)
+  - [ ] 5.2 cart, checkout, order/success
+  - [ ] 5.3 info pages (about, contact, shipping, returns, warranty, privacy, terms) + 404
+  (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
 - [ ] Step 6: SEO, a11y, mobile polish, build, screenshots, README
 
 ## Done so far (details)
