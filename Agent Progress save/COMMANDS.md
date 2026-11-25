@@ -25,3 +25,5 @@ Result: SUCCESS — / 14.8kB, log scripts/logs/build.log
 Result: see next entry
 ### 13. npm run build (shop + product pages)
 Result: SUCCESS — log scripts/logs/build.log
+### 14. Session #8: clone, creds (token hidden), autopush, npm install
+Result: see next entry

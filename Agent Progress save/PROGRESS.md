@@ -4,9 +4,9 @@
 - Overall: IN PROGRESS
 - Current: Step 5/6 → store pages (Session #7)
 - Last action: `npm run build` PASSES with /shop + /product/[slug] (3 SSG pages).
-- NEXT ACTION: write app/cart/page.tsx, app/checkout/page.tsx (+components/checkout/CheckoutClient.tsx), app/order/success/page.tsx, then info pages + 404.
+- NEXT ACTION (S#8): build-check cart/checkout/success, then 5.3 info pages + FAQ/contact + app/api/contact + not-found + sitemap/robots. OLD: write app/cart/page.tsx, app/checkout/page.tsx (+components/checkout/CheckoutClient.tsx), app/order/success/page.tsx, then info pages + 404.
 - Project runs?: YES (build passes, home = hero only)
-- Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #7
+- Last updated: 2026-11-25 18:17 (Asia/Dhaka) by Session #8
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -69,6 +69,7 @@ npm run build
 - Session #4 (2026-11-25): started, resuming from step 3 (hero + switcher). User re-confirmed: progress files ONLY in `Agent Progress save/`, website outside, use assets/*.glb. Pushed hero/switcher/page (b9bb290); build FAILED on lib/products.ts type cast (see scripts/logs/build.log).
 - Session #5 (2026-11-25 17:40 Dhaka): an unlogged session was stopped by usage policy while screenshotting the hero (nothing pushed). Session #5 started, resuming at step 3 (fix build error, then verify hero). User re-confirmed the same 3 rules.
 - Session #7 (2026-11-25 17:50 Dhaka): Session #6 was stopped by usage policy while writing cart/checkout/success (lost). Session #7 started, resuming at step 5.1 (build check). User re-confirmed the same 3 rules.
+- Session #8 (2026-11-25 18:17 Dhaka): Session #7 was stopped by usage policy after pushing checkout/success (2743906); its info pages, FAQ/contact, contact API, 404, sitemap/robots were NOT pushed (lost). Session #8 started, resuming at 5.2 (build check) then 5.3. User re-confirmed the same 3 rules.
 - Session #6 (2026-11-25 17:45 Dhaka): Session #5 was stopped by usage policy after pushing all home sections (b956cba). Session #6 started, resuming at step 4 (build check). User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
