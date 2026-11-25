@@ -2,11 +2,11 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 4/6 → home sections (Session #5)
-- Last action: fixed lib/products.ts cast (`as unknown as Product[]`); `npm run build` PASSES (log: scripts/logs/build.log). Hero + switcher exist.
-- NEXT ACTION: write components/sections/{Collection,FeaturesScroll,Configurator,SoundDemo,Specs,Reviews,Marquee,FAQ,CTA}.tsx and add to app/page.tsx; build.
+- Current: Step 4/6 → verify home sections build (Session #6)
+- Last action: Session #6 resumed. All 9 home sections exist in components/sections/ and are wired in app/page.tsx (commit b956cba), build not yet verified.
+- NEXT ACTION: `npm run build`, fix errors, then Step 5 pages (shop, product/[slug], cart, checkout, success, info, 404).
 - Project runs?: YES (build passes, home = hero only)
-- Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #5
+- Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #6
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -64,6 +64,7 @@ npm run build
 - Session #3 (2026-11-25): started, resuming from step 2 (rewriting the lost files). Pushed step 2 + Viewer/HeadphoneModel/Particles; stopped by usage policy while writing hero/ProductSwitcher (lost).
 - Session #4 (2026-11-25): started, resuming from step 3 (hero + switcher). User re-confirmed: progress files ONLY in `Agent Progress save/`, website outside, use assets/*.glb. Pushed hero/switcher/page (b9bb290); build FAILED on lib/products.ts type cast (see scripts/logs/build.log).
 - Session #5 (2026-11-25 17:40 Dhaka): an unlogged session was stopped by usage policy while screenshotting the hero (nothing pushed). Session #5 started, resuming at step 3 (fix build error, then verify hero). User re-confirmed the same 3 rules.
+- Session #6 (2026-11-25 17:45 Dhaka): Session #5 was stopped by usage policy after pushing all home sections (b956cba). Session #6 started, resuming at step 4 (build check). User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
