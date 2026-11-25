@@ -15,3 +15,5 @@ Result: running — see scripts/logs/optimize-models.log
 Result: SUCCESS — repo had step 0/1 only; public/models/*.glb already optimized (1.09–1.24 MB)
 ### 8. Session #4: git clone + configured git credentials (token hidden); started autopush.sh; npm install
 Result: SUCCESS
+### 9. Session #5: clone, creds (token hidden), autopush, npm install, fix lib/products.ts, npm run build
+Result: SUCCESS — build passes

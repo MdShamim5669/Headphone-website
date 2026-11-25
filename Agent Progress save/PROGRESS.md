@@ -2,11 +2,11 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 3/6 → 3D viewer fix + Hero + ProductSwitcher + app/page.tsx (Session #4)
-- Last action: Session #4 resumed. Step 2 files exist (pushed in 8254735). components/three/{Viewer,HeadphoneModel,Particles}.tsx exist (auto-pushed 93024d8); Rig idle logic in Viewer.tsx was broken (lastEnd=NaN) → fixing.
-- NEXT ACTION: fix Rig idle in components/three/Viewer.tsx, write components/hero/{Hero,ProductSwitcher}.tsx + app/page.tsx, run `npm run build`.
-- Project runs?: NOT YET (no app/page.tsx)
-- Last updated: 2026-11-25 00:55 (Asia/Dhaka) by Session #4
+- Current: Step 4/6 → home sections (Session #5)
+- Last action: fixed lib/products.ts cast (`as unknown as Product[]`); `npm run build` PASSES (log: scripts/logs/build.log). Hero + switcher exist.
+- NEXT ACTION: write components/sections/{Collection,FeaturesScroll,Configurator,SoundDemo,Specs,Reviews,Marquee,FAQ,CTA}.tsx and add to app/page.tsx; build.
+- Project runs?: YES (build passes, home = hero only)
+- Last updated: 2026-11-25 17:50 (Asia/Dhaka) by Session #5
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -32,8 +32,8 @@
   - [x] 1.3 Optimize GLBs → public/models (gltf-transform, webp textures, meshopt) + posters
 - [x] Step 2: Data
   - [x] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
-- [ ] Step 3: ← IN PROGRESS (Session #4) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
-- [ ] Step 4: Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
+- [x] Step 3: (done Session #5, build passes) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
+- [ ] Step 4: ← IN PROGRESS (Session #5) Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
 - [ ] Step 5: Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
 - [ ] Step 6: SEO, a11y, mobile polish, build, screenshots, README
 
