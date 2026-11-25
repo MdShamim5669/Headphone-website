@@ -17,7 +17,7 @@ export default function ProductSwitcher() {
       {shown.map((i) => {
         const p = products[i];
         return (
-          <button key={p.id} onClick={() => set(i)} data-cursor="hover"
+          <button key={p.id} onClick={() => set(i)} data-cursor="hover" aria-pressed={i === index}
             className="glass group flex w-40 items-center gap-3 rounded-2xl p-2 pr-3 text-left transition hover:-translate-y-1 hover:border-[var(--accent)] sm:w-48">
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl transition group-hover:scale-105"
               style={{ background: `radial-gradient(circle at 30% 30%, ${p.theme.accent}, ${p.theme.bgFrom} 75%)` }}>
