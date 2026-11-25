@@ -62,7 +62,8 @@ npm run build
   stores, 3D scene, viewer, navbar/footer/cart drawer and hero, then was stopped by a usage policy.
   Those files were LOST. Lesson: checkpoint right after each file batch.
 - Session #3 (2026-11-25): started, resuming from step 2 (rewriting the lost files). Pushed step 2 + Viewer/HeadphoneModel/Particles; stopped by usage policy while writing hero/ProductSwitcher (lost).
-- Session #4 (2026-11-25): started, resuming from step 3 (hero + switcher). User re-confirmed: progress files ONLY in `Agent Progress save/`, website outside, use assets/*.glb.
+- Session #4 (2026-11-25): started, resuming from step 3 (hero + switcher). User re-confirmed: progress files ONLY in `Agent Progress save/`, website outside, use assets/*.glb. Pushed hero/switcher/page (b9bb290); build FAILED on lib/products.ts type cast (see scripts/logs/build.log).
+- Session #5 (2026-11-25 17:40 Dhaka): an unlogged session was stopped by usage policy while screenshotting the hero (nothing pushed). Session #5 started, resuming at step 3 (fix build error, then verify hero). User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
