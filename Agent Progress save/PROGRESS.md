@@ -2,11 +2,11 @@
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
-- Current: Step 5/6 → store pages (Session #7)
-- Last action: `npm run build` PASSES with /shop + /product/[slug] (3 SSG pages).
-- NEXT ACTION (S#8): build-check cart/checkout/success, then 5.3 info pages + FAQ/contact + app/api/contact + not-found + sitemap/robots. OLD: write app/cart/page.tsx, app/checkout/page.tsx (+components/checkout/CheckoutClient.tsx), app/order/success/page.tsx, then info pages + 404.
-- Project runs?: YES (build passes, home = hero only)
-- Last updated: 2026-11-25 18:17 (Asia/Dhaka) by Session #8
+- Current: Step 6/6 → README, brand assets (icon/OG), SEO/a11y/mobile polish, screenshots (Session #10)
+- Last action: Session #10 started. Steps 5.2 + 5.3 are DONE (build log in scripts/logs/build.log shows all routes, EXIT=0, pushed in 2f96d86).
+- NEXT ACTION: npm install + npm run build; then write README.md (repo root), app/icon.svg, app/opengraph-image; then a11y/mobile pass; screenshots LAST into `Agent Progress save/output/preview/`.
+- Project runs?: YES (build passes with all pages)
+- Last updated: 2026-11-25 18:35 (Asia/Dhaka) by Session #10
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -34,12 +34,16 @@
   - [x] Step 2 data + design system: data/products.json, theme vars, fonts, Navbar, Footer, CartDrawer
 - [x] Step 3: (done Session #5, build passes) 3D viewer (Scene, HeadphoneModel, loader, fallback) + Hero + product switcher
 - [x] Step 4: (done Session #6, build passes) Home sections (Collection, FeaturesScroll, Configurator, Sound, Specs, Reviews, Marquee, FAQ, CTA)
-- [ ] Step 5: ← IN PROGRESS
+- [x] Step 5: done (Session #8/#9)
   - [x] 5.1 shop + product/[slug] (build passes, Session #7)
-  - [ ] 5.2 cart, checkout, order/success
-  - [ ] 5.3 info pages (about, contact, shipping, returns, warranty, privacy, terms) + 404
+  - [x] 5.2 cart, checkout, order/success (build passes)
+  - [x] 5.3 info pages (about, contact, shipping, returns, warranty, privacy, terms) + 404 + sitemap/robots (build passes)
   (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
-- [ ] Step 6: SEO, a11y, mobile polish, build, screenshots, README
+- [ ] Step 6: ← IN PROGRESS (Session #10)
+  - [ ] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
+  - [ ] 6.2 brand assets: app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
+  - [ ] 6.3 a11y + mobile polish pass (focus rings, aria labels, reduced motion)
+  - [ ] 6.4 final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
 
 ## Done so far (details)
 - Step 0: created `Agent Progress save/` structure; checkpoint.sh + autopush.sh adapted to this folder.
@@ -71,6 +75,9 @@ npm run build
 - Session #7 (2026-11-25 17:50 Dhaka): Session #6 was stopped by usage policy while writing cart/checkout/success (lost). Session #7 started, resuming at step 5.1 (build check). User re-confirmed the same 3 rules.
 - Session #8 (2026-11-25 18:17 Dhaka): Session #7 was stopped by usage policy after pushing checkout/success (2743906); its info pages, FAQ/contact, contact API, 404, sitemap/robots were NOT pushed (lost). Session #8 started, resuming at 5.2 (build check) then 5.3. User re-confirmed the same 3 rules.
 - Session #6 (2026-11-25 17:45 Dhaka): Session #5 was stopped by usage policy after pushing all home sections (b956cba). Session #6 started, resuming at step 4 (build check). User re-confirmed the same 3 rules.
+
+- Session #9 (2026-11-25 ~18:25 Dhaka): verified build after 5.3 (pushed by autopush), started README/brand assets/screenshots; stopped by usage policy before pushing them (lost).
+- Session #10 (2026-11-25 18:35 Dhaka): started, resuming at step 6. User re-confirmed the same 3 rules (progress files only in `Agent Progress save/`, website outside it, use assets/*.glb).
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
