@@ -3,8 +3,8 @@
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
 - Current: Step 6/6 → README, brand assets (icon/OG), SEO/a11y/mobile polish, screenshots (Session #10)
-- Last action: 6.1 README + 6.2 icon/logo/OG image done; `npm run build` PASSES (25 routes).
-- NEXT ACTION: 6.5 mobile hero polish (Contact Us wraps, text overflows right, switcher overflows, cookie banner overlaps hero) — see output/preview/mobile-home.png. Then 6.4: `npm start` (port 3000) + Playwright screenshots (desktop + mobile) with short timeouts screenshots LAST into `Agent Progress save/output/preview/`.
+- Last action: Session #14: 6.5 done (compact mobile cookie banner), `npm run build` PASSES.
+- NEXT ACTION: 6.4 — `npm start` (port 3000) then `node "Agent Progress save/scripts/screenshots.mjs"` (home/product wait 15s for GLB). Review images in Agent Progress save/output/preview/, then mark Definition of Done and set Overall: DONE.
 - Project runs?: YES (build passes with all pages)
 - Last updated: 2026-11-26 03:30 (Asia/Dhaka) by Session #14
 
@@ -43,8 +43,8 @@
   - [x] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
   - [x] 6.2 brand assets (build passes; og.png reference removed, app/opengraph-image.tsx generates it): app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
   - [x] 6.3 a11y (audited: icon buttons labelled, focus-visible ring, skip link, reduced motion present; added aria-pressed to ProductSwitcher) + mobile polish pass (focus rings, aria labels, reduced motion)
-  - [ ] 6.5 mobile/desktop hero polish from session #12 screenshots ← IN PROGRESS (Session #13)
-  - [ ] 6.4 final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
+  - [x] 6.5 mobile/desktop hero polish (Session #13 hero fixes + Session #14 compact cookie banner in components/layout/CookieBanner.tsx; build passes)
+  - [ ] 6.4 ← IN PROGRESS (Session #14) final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
 
 ## Done so far (details)
 - Step 0: created `Agent Progress save/` structure; checkpoint.sh + autopush.sh adapted to this folder.
