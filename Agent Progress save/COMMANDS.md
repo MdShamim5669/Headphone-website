@@ -33,3 +33,5 @@ Result: SUCCESS — HEAD was 2f96d86
 Result: SUCCESS — 25 routes, log scripts/logs/build.log
 ### 17. Session #12: clone, creds (token hidden), autopush started, npm install
 Result: see next entry
+### 18. npm install + npm run build (session #12)
+Result: SUCCESS — 25 routes, log scripts/logs/build.log
