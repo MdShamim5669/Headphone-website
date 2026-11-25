@@ -1,5 +1,27 @@
 import Hero from "@/components/hero/Hero";
-// TODO(agent): add home sections (Collection, FeaturesScroll, Configurator, SoundDemo, Specs, Reviews, Marquee, FAQ, CTA) — Step 4
+import Collection from "@/components/sections/Collection";
+import FeaturesScroll from "@/components/sections/FeaturesScroll";
+import Configurator from "@/components/sections/Configurator";
+import SoundDemo from "@/components/sections/SoundDemo";
+import Specs from "@/components/sections/Specs";
+import Reviews from "@/components/sections/Reviews";
+import Marquee from "@/components/sections/Marquee";
+import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/sections/CTA";
+
 export default function Home() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Marquee />
+      <Collection />
+      <FeaturesScroll />
+      <Configurator />
+      <SoundDemo />
+      <Specs />
+      <Reviews />
+      <FAQ />
+      <CTA />
+    </>
+  );
 }
