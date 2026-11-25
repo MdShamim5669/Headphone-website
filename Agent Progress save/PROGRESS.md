@@ -6,7 +6,7 @@
 - Last action: 6.1 README + 6.2 icon/logo/OG image done; `npm run build` PASSES (25 routes).
 - NEXT ACTION: 6.5 mobile hero polish (Contact Us wraps, text overflows right, switcher overflows, cookie banner overlaps hero) — see output/preview/mobile-home.png. Then 6.4: `npm start` (port 3000) + Playwright screenshots (desktop + mobile) with short timeouts screenshots LAST into `Agent Progress save/output/preview/`.
 - Project runs?: YES (build passes with all pages)
-- Last updated: 2026-11-26 03:20 (Asia/Dhaka) by Session #13
+- Last updated: 2026-11-26 03:30 (Asia/Dhaka) by Session #14
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -81,6 +81,8 @@ npm run build
 - Session #10 (2026-11-25 18:35 Dhaka): started, resuming at step 6. User re-confirmed the same 3 rules (progress files only in `Agent Progress save/`, website outside it, use assets/*.glb).
 - Session #11 (2026-11-26 ~03:00 Dhaka): per user screenshot it fixed the ProductSwitcher + CookieBanner, build passed, was re-taking mobile/desktop home screenshots; stopped by usage policy. NONE of it was pushed (HEAD still 5398eb6) → lost.
 - Session #12 (2026-11-26 03:15 Dhaka): started, resuming at 6.4 (build + screenshots), then re-check switcher + cookie banner. User re-confirmed the same 3 rules.
+- Session #13 (2026-11-26 03:20 Dhaka): css @layer fix + mobile hero fixes, build passes, new home screenshots pushed (32234d6); stopped by usage policy while updating notes.
+- Session #14 (2026-11-26 03:30 Dhaka): started, resuming at 6.5. Reviewed screenshots: mobile hero OK now; remaining = cookie banner overlaps 'Deeply Immersive' on mobile; desktop screenshot taken before model loaded (LOADING 25%). User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
