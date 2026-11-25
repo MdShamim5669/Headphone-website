@@ -10,7 +10,7 @@ for (const [vpName, vp] of [["desktop", { width: 1440, height: 900 }], ["mobile"
     if (vpName === "mobile" && !["home", "product", "shop"].includes(name)) continue;
     try {
       await page.goto("http://localhost:3000" + path, { waitUntil: "load", timeout: 30000 });
-      await page.waitForTimeout(name === "home" || name === "product" ? 6000 : 1500);
+      await page.waitForTimeout(name === "home" || name === "product" ? 15000 : 1500);
       await page.screenshot({ path: `${out}/${vpName}-${name}.png` });
       console.log("ok", vpName, name);
     } catch (e) { console.log("fail", vpName, name, String(e).slice(0, 120)); }
