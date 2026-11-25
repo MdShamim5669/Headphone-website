@@ -1,12 +1,12 @@
 # PROGRESS
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
-- Overall: DONE (v1) — all 6 steps complete
-- Current: finished. Optional future work: real Stripe keys, CMS, more GLB models.
-- Last action: Session #14: 6.4 final build + 10 screenshots (desktop+mobile, GLB loaded) in Agent Progress save/output/preview/ (a8f0fb5).
-- NEXT ACTION: none required. Wait for new user requests; if changes are asked, follow the same rules (progress files only in this folder).
-- Project runs?: YES (build passes with all pages)
-- Last updated: 2026-11-26 03:30 (Asia/Dhaka) by Session #14
+- Overall: v1 DONE. Now Step 7 = REAL PAYMENTS (Stripe Checkout + SSLCommerz/bKash), env-gated, demo fallback.
+- Current: 7.1 server pricing lib (lib/pricing.ts) + payment libs (lib/payments/*)  ← IN PROGRESS
+- Last action: Session #16 started; Session #15 (unlogged) was stopped by usage policy while writing checkout API routes / real-payment checkout UI / success page — NOTHING pushed (HEAD was acb849c) → redo.
+- NEXT ACTION: write lib/pricing.ts, lib/payments/stripe.ts, lib/payments/sslcommerz.ts, then app/api/checkout/* routes, then update components/checkout/CheckoutClient.tsx + SuccessClient.tsx, then npm run build.
+- Project runs?: YES (v1 build passes)
+- Last updated: 2026-11-26 03:45 (Asia/Dhaka) by Session #16
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -49,6 +49,12 @@
 ## Done so far (details)
 - Step 0: created `Agent Progress save/` structure; checkpoint.sh + autopush.sh adapted to this folder.
 
+- [ ] Step 7: real payments (Session #16)
+  - [ ] 7.1 lib/pricing.ts (server-side totals from products.json, coupons, shipping) + lib/payments/{stripe,sslcommerz}.ts (fetch-based, no SDK)
+  - [ ] 7.2 app/api/checkout/route.ts (POST → creates Stripe session / SSLCommerz session / demo), app/api/checkout/sslcommerz/* callbacks, app/api/checkout/verify
+  - [ ] 7.3 CheckoutClient: payment method picker (Card/Stripe, bKash/Nagad/card via SSLCommerz, Cash on delivery), redirect to provider
+  - [ ] 7.4 SuccessClient verifies session; .env.example names; README payments section; build passes
+
 ## Problems / Notes
 - (none yet)
 
@@ -83,6 +89,7 @@ npm run build
 - Session #12 (2026-11-26 03:15 Dhaka): started, resuming at 6.4 (build + screenshots), then re-check switcher + cookie banner. User re-confirmed the same 3 rules.
 - Session #13 (2026-11-26 03:20 Dhaka): css @layer fix + mobile hero fixes, build passes, new home screenshots pushed (32234d6); stopped by usage policy while updating notes.
 - Session #14 (2026-11-26 03:30 Dhaka): started, resuming at 6.5. Reviewed screenshots: mobile hero OK now; remaining = cookie banner overlaps 'Deeply Immersive' on mobile; desktop screenshot taken before model loaded (LOADING 25%). User re-confirmed the same 3 rules.
+- Session #16 (2026-11-26 03:45 Dhaka): Session #15 (unlogged, after v1 done) started REAL PAYMENTS (pricing/payment libs, checkout API routes, checkout UI, success page) and was stopped by usage policy; nothing pushed. Session #16 resumes it as Step 7. User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
 TASK (only for NEW TASK; be as detailed as possible):
