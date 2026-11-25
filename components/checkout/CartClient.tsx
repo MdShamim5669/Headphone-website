@@ -27,7 +27,7 @@ export default function CartClient() {
           const p = getProduct(i.slug);
           return (
             <li key={i.sku} className="glass flex flex-col gap-4 rounded-3xl p-4 sm:flex-row sm:items-center">
-              <Link href={`/product/${i.slug}`} className="h-28 w-full shrink-0 overflow-hidden rounded-2xl sm:w-36">{p && <ProductArt p={p} />}</Link>
+              <Link href={`/product/${i.slug}`} className="h-28 w-full shrink-0 overflow-hidden rounded-2xl sm:w-36">{p && <ProductArt accent={p.theme.accent} from={p.theme.bgFrom} color={p.variants.find((v) => v.sku === i.sku)?.hex} className="h-full w-full" />}</Link>
               <div className="flex-1">
                 <Link href={`/product/${i.slug}`} className="text-lg font-semibold hover:text-accent">{i.name}</Link>
                 <p className="text-sm text-white/60">{i.variant} · {money(i.price)}</p>
