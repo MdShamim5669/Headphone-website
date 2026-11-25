@@ -50,9 +50,9 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-[100svh] overflow-hidden pt-24" aria-roledescription="carousel" aria-label="Featured headphones">
       <p className="sr-only" aria-live="polite">Now showing {p.name}, {money(p.price)}</p>
-      <div className="mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl grid-rows-[auto_1fr_auto] px-5 lg:px-8">
+      <div className="mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr_auto] px-5 lg:px-8">
         <div className="flex flex-col-reverse items-start justify-between gap-6 pt-4 lg:flex-row">
-          <div className="relative z-20 max-w-md">
+          <div className="relative z-20 w-full min-w-0 max-w-md">
             <AnimatePresence mode="wait">
               <motion.div key={p.id} {...fade}>
                 <h1 className="font-display text-6xl leading-[1.05] text-white drop-shadow-lg sm:text-7xl lg:text-8xl">{p.tagline}</h1>
@@ -73,7 +73,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative z-30 self-end lg:self-start"><ProductSwitcher /></div>
+          <div className="relative z-30 max-w-full self-end lg:self-start"><ProductSwitcher /></div>
         </div>
 
         {/* 3D model sits behind the second headline for the layered depth effect */}

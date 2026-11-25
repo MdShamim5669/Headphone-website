@@ -26,6 +26,8 @@ body {
 @property --accent { syntax: "<color>"; inherits: true; initial-value: #7dffb3; }
 :root { transition: --bg-from 0.9s ease, --bg-to 0.9s ease, --accent 0.9s ease; }
 
+/* In @layer components so Tailwind utilities (hidden, md:inline-flex, py-*) can override them */
+@layer components {
 .glass { background: rgb(255 255 255 / 0.07); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgb(255 255 255 / 0.12); }
 .text-accent { color: var(--accent); }
 .bg-accent { background-color: var(--accent); }
@@ -36,6 +38,7 @@ body {
 .btn-accent:hover { box-shadow: 0 0 32px -4px var(--accent); }
 .btn-ghost { border: 1px solid rgb(255 255 255 / .25); }
 .btn-ghost:hover { background: rgb(255 255 255 / .1); }
+}
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 
 .marquee { animation: marquee 28s linear infinite; }
