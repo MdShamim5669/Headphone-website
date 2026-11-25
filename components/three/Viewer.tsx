@@ -12,12 +12,14 @@ import type { Product } from "@/lib/types";
 export interface ViewerProps {
   product: Product; tint?: string; mode?: "hero" | "full"; particles?: boolean; hotspots?: boolean;
   preload?: string[]; className?: string; distance?: number;
+  /** If set, the model turns to this Y angle (radians) instead of idle-spinning (used by the scroll story). */
+  angle?: number;
 }
 
 const webglOK = () => { try { const c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); } catch { return false; } };
 
 /** Interactive 3D headphone viewer: drag rotate, Ctrl/focus wheel zoom, idle auto-rotate, hover tilt, hotspots, reset. */
-export default function Viewer({ product, tint, mode = "full", particles = false, hotspots = false, preload = [], className = "", distance = 4.2 }: ViewerProps) {
+export default function Viewer({ product, tint, mode = "full", particles = false, hotspots = false, preload = [], className = "", distance = 4.2, angle }: ViewerProps) {
   const wrap = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
   const [zoomOK, setZoomOK] = useState(false);
@@ -78,7 +80,7 @@ export default function Viewer({ product, tint, mode = "full", particles = false
           <Lightformer intensity={1} position={[4, 1, -2]} rotation-y={-Math.PI / 2} scale={[6, 3, 1]} color={shown.theme.accent} />
         </Environment>
         <Suspense fallback={null}>
-          <Rig mode={mode} resetRef={resetRef} keyRot={keyRot} zoom={zoomOK} distance={distance}>
+          <Rig mode={mode} resetRef={resetRef} keyRot={keyRot} zoom={zoomOK} distance={distance} angle={angle}>
             <HeadphoneModel product={shown} tint={tint} />
             {hotspots && shown.hotspots.map((h) => (
               <Html key={h.label} position={h.position} center distanceFactor={6} zIndexRange={[20, 0]}>
@@ -113,8 +115,8 @@ function Loader() {
 }
 
 /** Controls + idle logic: auto-rotate when idle, pause on drag, resume after 3s; hover tilt; animated reset / spring-back. */
-function Rig({ children, mode, resetRef, keyRot, zoom, distance }: {
-  children: React.ReactNode; mode: "hero" | "full"; resetRef: React.MutableRefObject<number>; keyRot: React.MutableRefObject<number>; zoom: boolean; distance: number;
+function Rig({ children, mode, resetRef, keyRot, zoom, distance, angle }: {
+  children: React.ReactNode; angle?: number; mode: "hero" | "full"; resetRef: React.MutableRefObject<number>; keyRot: React.MutableRefObject<number>; zoom: boolean; distance: number;
 }) {
   const g = useRef<THREE.Group>(null);
   const controls = useRef<OC>(null);
@@ -134,7 +136,7 @@ function Rig({ children, mode, resetRef, keyRot, zoom, distance }: {
       if (camera.position.distanceTo(home) < 0.01) r.resetting = false;
     }
     if (g.current) {
-      if (idle && !reduced) r.spin += dt * 0.35;
+      if (angle !== undefined) r.spin = angle; else if (idle && !reduced) r.spin += dt * 0.35;
       g.current.rotation.y = THREE.MathUtils.lerp(g.current.rotation.y, r.spin + keyRot.current, 0.08);
       const tilt = r.dragging ? 0 : 1;
       g.current.rotation.x = THREE.MathUtils.lerp(g.current.rotation.x, -s.pointer.y * 0.18 * tilt, 0.06);
