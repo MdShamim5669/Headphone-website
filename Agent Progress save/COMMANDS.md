@@ -37,3 +37,5 @@ Result: see next entry
 Result: SUCCESS — 25 routes, log scripts/logs/build.log
 ### 19. Session #13: clone, creds (token hidden), autopush started, npm install
 Result: SUCCESS
+### 20. Session #13: css @layer components fix + mobile hero fixes; npm run build
+Result: SUCCESS — log scripts/logs/build.log
