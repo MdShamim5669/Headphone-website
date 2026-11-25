@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Lock, CreditCard, Smartphone, Truck } from "lucide-react";
-import { useCart, cartSubtotal } from "@/store/useCartStore";
-import { money, totals } from "@/lib/utils";
+import { useCart } from "@/store/useCartStore";
+import { money } from "@/lib/utils";
 import Summary from "./Summary";
 import { useHydrated } from "./useHydrated";
 
@@ -27,15 +27,20 @@ function validate(f: Form, step: number) {
   return e;
 }
 
-/** 3-step demo checkout (contact → shipping → payment). No real charge is made.
- *  TODO(agent): when STRIPE_SECRET_KEY is set, POST the cart to an /api/checkout route and redirect to Stripe Checkout. */
+type Providers = { stripe: boolean; sslcommerz: boolean; cod: boolean };
+
+/** 3-step checkout (contact → shipping → payment). POSTs to /api/checkout, which re-prices on the server and
+ *  redirects to Stripe (card) or SSLCommerz (bKash/Nagad/cards) when their env keys are set; otherwise demo mode. */
 export default function CheckoutClient() {
   const hydrated = useHydrated();
   const router = useRouter();
   const items = useCart((s) => s.items);
   const coupon = useCart((s) => s.coupon);
   const clear = useCart((s) => s.clear);
-  const sub = useCart(cartSubtotal);
+  const params = useSearchParams();
+  const [prov, setProv] = useState<Providers | null>(null);
+  const [payErr, setPayErr] = useState(params.get("cancelled") ? "Payment was cancelled. You can try again." : params.get("failed") ? "Payment failed. Please try again or choose another method." : "");
+  useEffect(() => { fetch("/api/checkout").then((r) => r.json()).then(setProv).catch(() => setProv({ stripe: false, sslcommerz: false, cod: true })); }, []);
   const [f, setF] = useState<Form>(EMPTY);
   const [step, setStep] = useState(0);
   const [errors, setErrors] = useState<ReturnType<typeof validate>>({});
@@ -48,18 +53,33 @@ export default function CheckoutClient() {
       <Link href="/shop" className="btn btn-accent mt-6">Browse headphones</Link></div>
   );
 
-  const next = (e: React.FormEvent) => {
+  const next = async (e: React.FormEvent) => {
     e.preventDefault();
     const v = validate(f, step); setErrors(v);
     if (Object.keys(v).length) return;
     if (step < 2) { setStep(step + 1); return; }
-    setBusy(true);
-    const t = totals(sub, coupon);
-    const total = t.total + (f.ship === "express" ? 15 : 0);
-    const order = { id: "SQ-" + Date.now().toString(36).toUpperCase(), email: f.email, name: f.name, total, items, pay: f.pay, ship: f.ship, date: new Date().toISOString() };
-    sessionStorage.setItem("soniq-last-order", JSON.stringify(order));
-    setTimeout(() => { clear(); router.push(`/order/success?id=${order.id}`); }, 900);
+    setBusy(true); setPayErr("");
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: items.map((i) => ({ sku: i.sku, qty: i.qty })), coupon, ship: f.ship, pay: f.pay,
+          customer: { name: f.name, email: f.email, phone: f.phone, address: f.address, city: f.city, zip: f.zip, country: f.country } }),
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error(j.error || "Checkout failed");
+      const o = j.order;
+      const order = { id: j.orderId, email: f.email, name: f.name, total: o.total, pay: f.pay, ship: f.ship, mode: j.mode, date: new Date().toISOString(),
+        items: o.lines.map((l: { sku: string; name: string; variant: string; qty: number; unit: number }) => ({ sku: l.sku, name: l.name, variant: l.variant, qty: l.qty, price: l.unit })) };
+      sessionStorage.setItem("soniq-last-order", JSON.stringify(order));
+      if (j.mode === "redirect" && j.url) { window.location.assign(j.url); return; } // cart is cleared on the success page
+      clear(); router.push(`/order/success?id=${order.id}&mode=${j.mode}`);
+    } catch (err) {
+      setPayErr((err as Error).message); setBusy(false);
+    }
   };
+
+  const live = (v: Form["pay"]) => !prov ? true : v === "card" ? prov.stripe || prov.sslcommerz : v === "mobile" ? prov.sslcommerz : prov.cod;
+  const anyLive = !!prov && (prov.stripe || prov.sslcommerz);
 
   const field = (k: keyof Form, label: string, props: React.InputHTMLAttributes<HTMLInputElement> = {}) => (
     <label className="block text-sm">
@@ -109,12 +129,13 @@ export default function CheckoutClient() {
           </>}
           {step === 2 && <>
             <h2 className="text-lg font-semibold">Payment</h2>
-            <p className="text-sm text-white/60">Demo store — no real payment is taken.</p>
+            <p className="text-sm text-white/60">{!prov ? "Checking payment options…" : anyLive ? "You'll be sent to a secure payment page to finish." : "Demo mode — no payment keys configured, so no real charge is made."}</p>
             <fieldset className="grid gap-3 sm:grid-cols-3"><legend className="sr-only">Payment method</legend>
               {([["card", "Card", CreditCard], ["mobile", "bKash / Nagad", Smartphone], ["cod", "Cash on delivery", Truck]] as const).map(([v, l, Icon]) => (
                 <label key={v} className={`glass flex cursor-pointer flex-col items-center gap-2 rounded-2xl p-4 text-center text-sm transition hover:bg-white/10 ${f.pay === v ? "!border-[var(--accent)]" : ""}`}>
                   <input type="radio" name="pay" value={v} checked={f.pay === v} onChange={set("pay")} className="sr-only" />
                   <Icon size={22} className="text-accent" />{l}
+                  {prov && !live(v) && v !== "cod" && <span className="text-[10px] uppercase tracking-wider text-white/40">demo</span>}
                 </label>
               ))}
             </fieldset>
@@ -124,10 +145,11 @@ export default function CheckoutClient() {
             </div>
           </>}
         </div>
+        {payErr && <p role="alert" className="rounded-2xl border border-red-400/40 bg-red-500/10 p-3 text-sm text-red-200">{payErr}</p>}
         <div className="flex items-center justify-between gap-3">
           {step > 0 ? <button type="button" onClick={() => setStep(step - 1)} className="btn btn-ghost">Back</button> : <Link href="/cart" className="btn btn-ghost">Back to cart</Link>}
           <button type="submit" disabled={busy} className="btn btn-accent disabled:opacity-60">
-            {step < 2 ? "Continue" : busy ? "Placing order…" : <><Lock size={16} /> Place order</>}
+            {step < 2 ? "Continue" : busy ? "Processing…" : <><Lock size={16} /> {f.pay === "cod" ? "Place order" : "Pay now"}</>}
           </button>
         </div>
       </form>
