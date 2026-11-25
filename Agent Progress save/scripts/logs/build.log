@@ -17,26 +17,40 @@ https://nextjs.org/telemetry
    ▲ Next.js 15.5.29
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 22.5s
+ ✓ Compiled successfully in 25.0s
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/9) ...
-   Generating static pages (2/9) 
-   Generating static pages (4/9) 
-   Generating static pages (6/9) 
- ✓ Generating static pages (9/9)
+   Generating static pages (0/23) ...
+   Generating static pages (5/23) 
+   Generating static pages (11/23) 
+   Generating static pages (17/23) 
+ ✓ Generating static pages (23/23)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                                 Size  First Load JS
-┌ ○ /                                    14.8 kB         173 kB
-├ ○ /_not-found                            995 B         104 kB
-├ ƒ /api/newsletter                        123 B         103 kB
-├ ● /product/[slug]                      7.17 kB         116 kB
+┌ ○ /                                    14.9 kB         173 kB
+├ ○ /_not-found                            136 B         103 kB
+├ ○ /about                                 178 B         106 kB
+├ ƒ /api/contact                           136 B         103 kB
+├ ƒ /api/newsletter                        136 B         103 kB
+├ ○ /cart                                4.74 kB         114 kB
+├ ○ /checkout                            4.47 kB         114 kB
+├ ○ /contact                                3 kB         106 kB
+├ ○ /faq                                 3.34 kB         153 kB
+├ ○ /order/success                       3.03 kB         156 kB
+├ ○ /privacy                               178 B         106 kB
+├ ● /product/[slug]                      7.41 kB         117 kB
 ├   ├ /product/bose-qc2
 ├   ├ /product/hybrid-anc
 ├   └ /product/crusher-540
-└ ○ /shop                                5.25 kB         115 kB
+├ ○ /returns                               178 B         106 kB
+├ ○ /robots.txt                            136 B         103 kB
+├ ○ /shipping                              178 B         106 kB
+├ ○ /shop                                5.53 kB         115 kB
+├ ○ /sitemap.xml                           136 B         103 kB
+├ ○ /terms                                 178 B         106 kB
+└ ○ /warranty                              178 B         106 kB
 + First Load JS shared by all             103 kB
   ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
   ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
@@ -47,4 +61,4 @@ Route (app)                                 Size  First Load JS
 ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
 ƒ  (Dynamic)  server-rendered on demand
 
-EXIT 0
+EXIT=0
