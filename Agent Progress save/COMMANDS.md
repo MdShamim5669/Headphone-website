@@ -43,3 +43,5 @@ Result: SUCCESS — log scripts/logs/build.log
 Result: SUCCESS — HEAD was 32234d6
 ### 22. Session #14: cookie banner mobile compact; npm run build
 Result: SUCCESS — log scripts/logs/build.log
+### 23. Session #14: npm start + node screenshots.mjs (15s GLB wait)
+Result: SUCCESS — 10 screenshots saved to output/preview/

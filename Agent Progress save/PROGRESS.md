@@ -1,10 +1,10 @@
 # PROGRESS
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
-- Overall: IN PROGRESS
-- Current: Step 6/6 → README, brand assets (icon/OG), SEO/a11y/mobile polish, screenshots (Session #10)
-- Last action: Session #14: 6.5 done (compact mobile cookie banner), `npm run build` PASSES.
-- NEXT ACTION: 6.4 — `npm start` (port 3000) then `node "Agent Progress save/scripts/screenshots.mjs"` (home/product wait 15s for GLB). Review images in Agent Progress save/output/preview/, then mark Definition of Done and set Overall: DONE.
+- Overall: DONE (v1) — all 6 steps complete
+- Current: finished. Optional future work: real Stripe keys, CMS, more GLB models.
+- Last action: Session #14: 6.4 final build + 10 screenshots (desktop+mobile, GLB loaded) in Agent Progress save/output/preview/ (a8f0fb5).
+- NEXT ACTION: none required. Wait for new user requests; if changes are asked, follow the same rules (progress files only in this folder).
 - Project runs?: YES (build passes with all pages)
 - Last updated: 2026-11-26 03:30 (Asia/Dhaka) by Session #14
 
@@ -17,16 +17,16 @@
   optimizing GLBs and rendering posters. Everything restarted in Session #2.
 
 ## Definition of Done
-- [ ] `npm run build` passes
-- [ ] Home page: navbar, 3D hero with GLB rotate/zoom + product switcher with theme transitions, all home sections
-- [ ] /shop, /product/[slug], /cart, /checkout (demo), /order/success, info pages, 404
-- [ ] Cart (zustand + localStorage), wishlist, coupon
-- [ ] Mobile layout + reduced motion + basic SEO (metadata, sitemap, robots, JSON-LD)
-- [ ] README explains setup
+- [x] `npm run build` passes
+- [x] Home page: navbar, 3D hero with GLB rotate/zoom + product switcher with theme transitions, all home sections
+- [x] /shop, /product/[slug], /cart, /checkout (demo), /order/success, info pages, 404
+- [x] Cart (zustand + localStorage), wishlist, coupon
+- [x] Mobile layout + reduced motion + basic SEO (metadata, sitemap, robots, JSON-LD)
+- [x] README explains setup
 
 ## Plan
 - [x] Step 0: progress folder, scripts, plan
-- [ ] Step 1: Setup
+- [x] Step 1: Setup
   - [x] 1.1 Next.js scaffold at repo root (package.json, tsconfig, next.config.ts, postcss)
   - [x] 1.2 Install deps (three, r3f, drei, zustand, framer-motion, lucide-react)
   - [x] 1.3 Optimize GLBs → public/models (gltf-transform, webp textures, meshopt) + posters
@@ -39,12 +39,12 @@
   - [x] 5.2 cart, checkout, order/success (build passes)
   - [x] 5.3 info pages (about, contact, shipping, returns, warranty, privacy, terms) + 404 + sitemap/robots (build passes)
   (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
-- [ ] Step 6: ← IN PROGRESS (Session #10)
+- [x] Step 6: done (Session #14)
   - [x] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
   - [x] 6.2 brand assets (build passes; og.png reference removed, app/opengraph-image.tsx generates it): app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
   - [x] 6.3 a11y (audited: icon buttons labelled, focus-visible ring, skip link, reduced motion present; added aria-pressed to ProductSwitcher) + mobile polish pass (focus rings, aria labels, reduced motion)
   - [x] 6.5 mobile/desktop hero polish (Session #13 hero fixes + Session #14 compact cookie banner in components/layout/CookieBanner.tsx; build passes)
-  - [ ] 6.4 ← IN PROGRESS (Session #14) final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
+  - [x] 6.4 (Session #14) final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
 
 ## Done so far (details)
 - Step 0: created `Agent Progress save/` structure; checkpoint.sh + autopush.sh adapted to this folder.
