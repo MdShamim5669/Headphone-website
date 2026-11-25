@@ -3,8 +3,8 @@
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
 - Overall: IN PROGRESS
 - Current: Step 6/6 → README, brand assets (icon/OG), SEO/a11y/mobile polish, screenshots (Session #10)
-- Last action: Session #10 started. Steps 5.2 + 5.3 are DONE (build log in scripts/logs/build.log shows all routes, EXIT=0, pushed in 2f96d86).
-- NEXT ACTION: npm install + npm run build; then write README.md (repo root), app/icon.svg, app/opengraph-image; then a11y/mobile pass; screenshots LAST into `Agent Progress save/output/preview/`.
+- Last action: 6.1 README + 6.2 icon/logo/OG image done; `npm run build` PASSES (25 routes).
+- NEXT ACTION: 6.3 a11y/mobile pass (check aria-labels on icon buttons in Navbar/CartDrawer/ProductSwitcher), then 6.4 screenshots LAST into `Agent Progress save/output/preview/`.
 - Project runs?: YES (build passes with all pages)
 - Last updated: 2026-11-25 18:35 (Asia/Dhaka) by Session #10
 
@@ -40,8 +40,8 @@
   - [x] 5.3 info pages (about, contact, shipping, returns, warranty, privacy, terms) + 404 + sitemap/robots (build passes)
   (Session #6) Pages: shop, product/[slug], cart, checkout (demo, Stripe-ready), success, info pages, 404
 - [ ] Step 6: ← IN PROGRESS (Session #10)
-  - [ ] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
-  - [ ] 6.2 brand assets: app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
+  - [x] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
+  - [x] 6.2 brand assets (build passes; og.png reference removed, app/opengraph-image.tsx generates it): app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
   - [ ] 6.3 a11y + mobile polish pass (focus rings, aria labels, reduced motion)
   - [ ] 6.4 final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
 
