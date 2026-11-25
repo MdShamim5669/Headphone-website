@@ -4,9 +4,9 @@
 - Overall: IN PROGRESS
 - Current: Step 6/6 → README, brand assets (icon/OG), SEO/a11y/mobile polish, screenshots (Session #10)
 - Last action: 6.1 README + 6.2 icon/logo/OG image done; `npm run build` PASSES (25 routes).
-- NEXT ACTION: 6.4: `npm start` (port 3000) + Playwright screenshots (desktop + mobile) with short timeouts screenshots LAST into `Agent Progress save/output/preview/`.
+- NEXT ACTION: 6.5 mobile hero polish (Contact Us wraps, text overflows right, switcher overflows, cookie banner overlaps hero) — see output/preview/mobile-home.png. Then 6.4: `npm start` (port 3000) + Playwright screenshots (desktop + mobile) with short timeouts screenshots LAST into `Agent Progress save/output/preview/`.
 - Project runs?: YES (build passes with all pages)
-- Last updated: 2026-11-26 03:15 (Asia/Dhaka) by Session #12
+- Last updated: 2026-11-26 03:20 (Asia/Dhaka) by Session #13
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -43,6 +43,7 @@
   - [x] 6.1 README.md at repo root (setup, run, structure, GLB pipeline)
   - [x] 6.2 brand assets (build passes; og.png reference removed, app/opengraph-image.tsx generates it): app/icon.svg, app/opengraph-image.tsx, metadata check, product JSON-LD
   - [x] 6.3 a11y (audited: icon buttons labelled, focus-visible ring, skip link, reduced motion present; added aria-pressed to ProductSwitcher) + mobile polish pass (focus rings, aria labels, reduced motion)
+  - [ ] 6.5 mobile/desktop hero polish from session #12 screenshots ← IN PROGRESS (Session #13)
   - [ ] 6.4 final build + screenshots → Agent Progress save/output/preview/ (do LAST; sessions #5 and #9 were stopped while screenshotting)
 
 ## Done so far (details)
@@ -598,3 +599,4 @@ components/ui, store/, data/, lib/."
 
 
 TECH / CONSTRAINTS (optional):
+- Session #13 (2026-11-26 03:20 Dhaka): Session #12 took home screenshots (pushed by autopush d560fd7), then was stopped by usage policy while reading hero/switcher/global CSS. Session #13 resumes at 6.5 (mobile hero polish). User re-confirmed the same 3 rules.

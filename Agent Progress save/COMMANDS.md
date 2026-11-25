@@ -35,3 +35,5 @@ Result: SUCCESS — 25 routes, log scripts/logs/build.log
 Result: see next entry
 ### 18. npm install + npm run build (session #12)
 Result: SUCCESS — 25 routes, log scripts/logs/build.log
+### 19. Session #13: clone, creds (token hidden), autopush started, npm install
+Result: SUCCESS
