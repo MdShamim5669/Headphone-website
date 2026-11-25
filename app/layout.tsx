@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: "SONIQ — 3D Headphone Store", template: "%s | SONIQ" },
   description: "Premium wireless headphones you can spin, zoom and explore in 3D. Free shipping over $150.",
-  openGraph: { type: "website", siteName: "SONIQ", images: ["/og.png"] },
+  openGraph: { type: "website", siteName: "SONIQ" },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
 };
