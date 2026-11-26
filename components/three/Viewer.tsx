@@ -120,7 +120,16 @@ function Rig({ children, mode, resetRef, keyRot, zoom, distance, angle }: {
 }) {
   const g = useRef<THREE.Group>(null);
   const controls = useRef<OC>(null);
-  const { camera } = useThree();
+  const { camera, gl } = useThree();
+  // Touch screens: OrbitControls sets touch-action:none, which traps page scrolling on a big
+  // mobile canvas. Allow vertical page scroll (pan-y); horizontal drags still rotate the model.
+  useEffect(() => {
+    if (!matchMedia("(pointer: coarse)").matches) return;
+    const el = gl.domElement;
+    const apply = () => { el.style.touchAction = "pan-y"; };
+    apply(); const id = requestAnimationFrame(apply);
+    return () => cancelAnimationFrame(id);
+  }, [gl]);
   const st = useRef({ dragging: false, lastEnd: -10, ended: false, reset: 0, resetting: false, spin: 0 });
   const home = useMemo(() => new THREE.Vector3(0, 0.2, distance), [distance]);
   const reduced = useMemo(() => typeof window !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches, []);

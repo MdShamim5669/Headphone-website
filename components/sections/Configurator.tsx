@@ -20,7 +20,7 @@ export default function Configurator() {
   const v = p.variants[vi] ?? p.variants[0];
   return (
     <section id="configurator" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 lg:px-8">
-      <SectionTitle kicker="Configurator" title="Make it yours" sub="Pick a model and a finish. Drag to rotate, Ctrl + scroll to zoom, double-click to reset." />
+      <SectionTitle kicker="Configurator" title="Make it yours" sub="Pick a model and a finish. Drag or swipe to rotate, Ctrl + scroll to zoom, double-click to reset." />
       <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
         <div className="glass relative h-[52vh] overflow-hidden rounded-[2rem] lg:h-[64vh]">
           <Viewer product={p} tint={v.hex} className="h-full w-full" />

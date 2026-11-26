@@ -48,21 +48,21 @@ export default function Hero() {
   const fade = { initial: { opacity: 0, y: 24, filter: "blur(8px)" }, animate: { opacity: 1, y: 0, filter: "blur(0px)" }, exit: { opacity: 0, y: -18, filter: "blur(8px)" }, transition: { duration: 0.5 } };
 
   return (
-    <section id="home" className="relative min-h-[100svh] overflow-hidden pt-24" aria-roledescription="carousel" aria-label="Featured headphones">
+    <section id="home" className="relative overflow-hidden pt-20 lg:min-h-[100svh] lg:pt-24" aria-roledescription="carousel" aria-label="Featured headphones">
       <p className="sr-only" aria-live="polite">Now showing {p.name}, {money(p.price)}</p>
-      <div className="mx-auto grid min-h-[calc(100svh-6rem)] max-w-7xl grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr_auto] px-5 lg:px-8">
-        <div className="flex flex-col-reverse items-start justify-between gap-6 pt-4 lg:flex-row">
+      <div className="mx-auto grid max-w-7xl lg:min-h-[calc(100svh-6rem)] grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr_auto] px-5 lg:px-8">
+        <div className="flex flex-col-reverse items-start justify-between gap-4 pt-2 lg:flex-row lg:gap-6 lg:pt-4">
           <div className="relative z-20 w-full min-w-0 max-w-md">
             <AnimatePresence mode="wait">
               <motion.div key={p.id} {...fade}>
-                <h1 className="font-display text-6xl leading-[1.05] text-white drop-shadow-lg sm:text-7xl lg:text-8xl">{p.tagline}</h1>
-                <p className="mt-4 max-w-sm text-base text-white/75">{p.description}</p>
+                <h1 className="font-display text-[3.25rem] leading-[1.05] text-white drop-shadow-lg sm:text-7xl lg:text-8xl">{p.tagline}</h1>
+                <p className="mt-3 line-clamp-2 max-w-sm text-sm text-white/75 sm:line-clamp-none sm:text-base lg:mt-4">{p.description}</p>
                 <div className="mt-3 flex items-center gap-2 text-sm text-white/80">
                   <Star size={14} className="fill-[var(--accent)] text-accent" /> {p.rating} · {p.reviewCount.toLocaleString()} reviews
                 </div>
               </motion.div>
             </AnimatePresence>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div className="mt-5 flex flex-wrap items-center gap-4 lg:mt-6">
               <button className="btn btn-accent group" data-cursor="hover"
                 onClick={() => add({ slug: p.slug, sku: p.variants[0].sku, variant: p.variants[0].name, price: p.price, name: p.name })}>
                 Shop Now <span className="grid h-6 w-6 place-items-center rounded-full bg-black/85 text-white transition group-hover:rotate-90"><Plus size={14} /></span>
@@ -73,19 +73,20 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative z-30 max-w-full self-end lg:self-start"><ProductSwitcher /></div>
+          <div className="relative z-30 max-w-full self-center sm:self-end lg:self-start"><ProductSwitcher /></div>
         </div>
 
-        {/* 3D model sits behind the second headline for the layered depth effect */}
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
-          <div className="pointer-events-auto h-[62vh] w-full max-w-4xl translate-y-10 sm:h-[72vh] lg:translate-y-6">
+        {/* Mobile: model sits in the flow between copy and sub-headline (no text overlap).
+            Desktop (lg): model is absolute behind the second headline for the layered depth effect. */}
+        <div className="pointer-events-none relative z-10 -mx-5 lg:absolute lg:inset-0 lg:mx-0 lg:flex lg:items-center lg:justify-center">
+          <div className="pointer-events-auto h-[52svh] max-h-[460px] min-h-[300px] w-full sm:h-[60svh] sm:max-h-none lg:h-[72vh] lg:max-w-4xl lg:translate-y-6">
             <Viewer product={p} mode="hero" particles hotspots preload={neighbors} className="h-full w-full" />
           </div>
         </div>
 
-        <div />
-        <div className="relative z-20 flex items-end justify-between gap-6 pb-8">
-          <div className="hidden items-center gap-4 sm:flex">
+        <div className="hidden lg:block" />
+        <div className="pointer-events-none relative z-20 -mt-14 flex items-end justify-between gap-6 pb-5 lg:mt-0 lg:pb-8">
+          <div className="pointer-events-auto hidden items-center gap-4 sm:flex">
             <div className="glass flex items-center gap-3 rounded-2xl px-4 py-3">
               <Award className="text-accent" size={26} />
               <div className="leading-tight"><p className="text-xs uppercase tracking-widest text-white/60">Design Awards</p><p className="text-sm font-semibold">Premium Audio 2026</p></div>
@@ -93,7 +94,7 @@ export default function Hero() {
             <a href="#collection" aria-label="Scroll down" className="glass grid h-12 w-8 place-items-start justify-center rounded-full pt-2"><span className="scroll-dot block h-2 w-2 rounded-full bg-accent" /><ArrowDown className="sr-only" /></a>
           </div>
           <AnimatePresence mode="wait">
-            <motion.h2 key={p.id + "-sub"} {...fade} className="pointer-events-none ml-auto text-right font-display text-5xl leading-none text-white/95 drop-shadow-[0_8px_30px_rgba(0,0,0,.45)] sm:text-7xl lg:text-8xl">
+            <motion.h2 key={p.id + "-sub"} {...fade} className="pointer-events-none ml-auto text-right font-display text-[2.6rem] leading-none text-white/95 drop-shadow-[0_8px_30px_rgba(0,0,0,.45)] sm:text-7xl lg:text-8xl">
               {p.subTagline}
             </motion.h2>
           </AnimatePresence>

@@ -12,13 +12,18 @@
   --text: #ffffff;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
 body {
   color: var(--text);
-  background: radial-gradient(120% 90% at 50% 20%, var(--bg-from), var(--bg-to) 70%);
-  background-attachment: fixed;
-  transition: background 0.9s ease;
+  background: var(--bg-to);
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+/* Fixed gradient layer (background-attachment: fixed is broken/janky on iOS & Android) */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(120% 90% at 50% 20%, var(--bg-from), var(--bg-to) 70%);
 }
 /* theme cross-fade: registered custom properties animate smoothly */
 @property --bg-from { syntax: "<color>"; inherits: true; initial-value: #0d3b2e; }
@@ -49,6 +54,8 @@ body {
 input, select, textarea { background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .15); border-radius: .75rem; padding: .7rem 1rem; color: inherit; }
 input::placeholder, textarea::placeholder { color: rgb(255 255 255 / .45); }
 option { color: #111; }
+/* iOS zooms the page when focusing inputs under 16px */
+@media (max-width: 640px) { input, select, textarea { font-size: 16px; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }

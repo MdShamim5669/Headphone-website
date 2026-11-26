@@ -34,7 +34,7 @@ export default function ProductDetail({ slug }: { slug: string }) {
       <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
         <div className="glass relative h-[55vh] overflow-hidden rounded-[2rem] lg:sticky lg:top-24 lg:h-[72vh]">
           <Viewer product={p} tint={v.hex} hotspots particles className="h-full w-full" />
-          <p className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/40 px-4 py-1.5 text-xs text-white/70">Drag to rotate · Ctrl + scroll to zoom · Double-click to reset</p>
+          <p className="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/40 px-4 py-1.5 whitespace-nowrap text-[11px] text-white/70 sm:text-xs"><span className="sm:hidden">Swipe sideways to rotate · Double-tap to reset</span><span className="hidden sm:inline">Drag to rotate · Ctrl + scroll to zoom · Double-click to reset</span></p>
         </div>
         <div className="space-y-6">
           <div>
