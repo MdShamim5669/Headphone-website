@@ -1,12 +1,11 @@
 # PROGRESS
 
 ## ⚡ QUICK STATE  (read this first; update at EVERY checkpoint)
-- Overall: v1 DONE. Now Step 7 = REAL PAYMENTS (Stripe Checkout + SSLCommerz/bKash), env-gated, demo fallback.
-- Current: 7.1 server pricing lib (lib/pricing.ts) + payment libs (lib/payments/*)  ← IN PROGRESS
-- Last action: Session #16 started; Session #15 (unlogged) was stopped by usage policy while writing checkout API routes / real-payment checkout UI / success page — NOTHING pushed (HEAD was acb849c) → redo.
-- NEXT ACTION: write lib/pricing.ts, lib/payments/stripe.ts, lib/payments/sslcommerz.ts, then app/api/checkout/* routes, then update components/checkout/CheckoutClient.tsx + SuccessClient.tsx, then npm run build.
-- Project runs?: YES (v1 build passes)
-- Last updated: 2026-11-26 03:45 (Asia/Dhaka) by Session #16
+- Overall: v1 DONE. Step 7 payments code pushed (ee4bc66). Session #17 (build check + README payments, local commit 9f00f39) was NEVER pushed → lost. Now Step 8 = MOBILE FIX (user request Session #18).
+- Current: 8.1 mobile audit (screenshots at 390px of all pages) ← IN PROGRESS
+- NEXT ACTION: npm install, npm run build, npm start, mobile screenshots, fix layout issues in components/*, rebuild.
+- Project runs?: unknown until build (Step 7 code not yet build-verified on remote)
+- Last updated: 2026-11-26 14:25 (Asia/Dhaka) by Session #18
 
 ## ‼️ USER RULES FROM CHAT (Session #2, 2026-11-25)
 - ALL agent-progress files (PROGRESS/COMMANDS/DECISIONS, checkpoint scripts, logs, previews, archive)
@@ -55,6 +54,11 @@
   - [ ] 7.3 CheckoutClient: payment method picker (Card/Stripe, bKash/Nagad/card via SSLCommerz, Cash on delivery), redirect to provider
   - [ ] 7.4 SuccessClient verifies session; .env.example names; README payments section; build passes
 
+- [ ] Step 8: MOBILE FIX (Session #18, user: "Mobile version er jonno fix koro")
+  - [ ] 8.1 audit mobile screenshots (390x844) of home/shop/product/cart/checkout
+  - [ ] 8.2 fix navbar/hero/sections/pages overflow + layout on mobile
+  - [ ] 8.3 build passes + new mobile screenshots → output/preview/
+
 ## Problems / Notes
 - (none yet)
 
@@ -89,6 +93,7 @@ npm run build
 - Session #12 (2026-11-26 03:15 Dhaka): started, resuming at 6.4 (build + screenshots), then re-check switcher + cookie banner. User re-confirmed the same 3 rules.
 - Session #13 (2026-11-26 03:20 Dhaka): css @layer fix + mobile hero fixes, build passes, new home screenshots pushed (32234d6); stopped by usage policy while updating notes.
 - Session #14 (2026-11-26 03:30 Dhaka): started, resuming at 6.5. Reviewed screenshots: mobile hero OK now; remaining = cookie banner overlaps 'Deeply Immersive' on mobile; desktop screenshot taken before model loaded (LOADING 25%). User re-confirmed the same 3 rules.
+- Session #18 (2026-11-26 14:20 Dhaka): started. Session #17 work (local commit 9f00f39: build check + README Payments section) never pushed → lost. User asked: fix the mobile version. User re-confirmed the same 3 rules.
 - Session #16 (2026-11-26 03:45 Dhaka): Session #15 (unlogged, after v1 done) started REAL PAYMENTS (pricing/payment libs, checkout API routes, checkout UI, success page) and was stopped by usage policy; nothing pushed. Session #16 resumes it as Step 7. User re-confirmed the same 3 rules.
 
 ## Task (copied exactly from the user — section 0 of AI_AGENT_INSTRUCTIONS.md)
